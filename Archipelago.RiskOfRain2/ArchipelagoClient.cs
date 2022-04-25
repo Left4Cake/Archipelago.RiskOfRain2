@@ -243,8 +243,7 @@ namespace Archipelago.RiskOfRain2
         private void Run_BeginGameOver(On.RoR2.Run.orig_BeginGameOver orig, Run self, GameEndingDef gameEndingDef)
         {
             var acceptableEndings = new[] { RoR2Content.GameEndings.MainEnding, RoR2Content.GameEndings.ObliterationEnding, RoR2Content.GameEndings.LimboEnding};
-            var isSimulacrumLocation = {"itancientloft","itdampcave","itfrozenwall","itgolemplains","itgoolake","itmoon","itskymeadow"};
-			var isAcceptableEnding = (acceptableEndings.Contains(gameEndingDef)) || (gameEndingDef == RoR2Content.GameEndings.StandardLoss && Stage.instance.sceneDef.baseSceneName == "moon2" || isSimulacrumLocation.Contains(Stage.instance.sceneDef.baseSceneName));
+            var isAcceptableEnding = (acceptableEndings.Contains(gameEndingDef)) || (gameEndingDef == RoR2Content.GameEndings.StandardLoss && Stage.instance.sceneDef.baseSceneName == "moon2");
 
             // Are we in commencement or have we obliterated?
             if (isAcceptableEnding)
